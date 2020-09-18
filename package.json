@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --project ./functions",
-    "serve": "concurrently --kill-others \"firebase serve\" \"tsc --project ./functions --watch\""
+    "serve": "tsc --project ./functions && rm -rf ./public/* && concurrently --kill-others \"firebase serve\" \"tsc --project ./functions --watch\" \"cd frontend\" \"./node_modules/.bin/vue-cli-service build --no-clean --dest ../public --watch\""
   },
   "repository": {
     "type": "git",
