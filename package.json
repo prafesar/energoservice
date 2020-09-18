@@ -1,0 +1,30 @@
+{
+  "name": "energoservice",
+  "version": "1.0.0",
+  "description": "service for delivery information about events in energosystem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prafesar/energoservice.git"
+  },
+  "keywords": [
+    "heigh",
+    "voltage",
+    "testing",
+    "energo",
+    "service"
+  ],
+  "author": "prafesar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prafesar/energoservice/issues"
+  },
+  "homepage": "https://github.com/prafesar/energoservice#readme",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "typescript": "^4.0.2"
+  }
+}
