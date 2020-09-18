@@ -4,7 +4,9 @@
   "description": "service for delivery information about events in energosystem",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --project ./functions",
+    "serve": "concurrently --kill-others \"firebase serve\" \"tsc --project ./functions --watch\""
   },
   "repository": {
     "type": "git",
