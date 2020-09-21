@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "tsc --project ./functions && rm -rf ./public/* && concurrently --kill-others \"firebase serve\" \"tsc --project ./functions --watch\" \"cd frontend\" \"./node_modules/.bin/vue-cli-service build --no-clean --dest ../public --watch\""
+    "serve-front": "rm -rf ./public/* && cd frontend && \"./node_modules/.bin/vue-cli-service\" build --no-clean --dest ../public --watch",
+    "serve-back": "tsc --project ./functions && concurrently --kill-others \"firebase serve\" \"tsc --project ./functions --watch\"",
+    "serve": "concurrently --kill-others \"npm run serve-back\" \"npm run serve-front\""
   },
   "repository": {
     "type": "git",
