@@ -1,14 +1,16 @@
 <template>
   <base-layout>
-    <p>Главная</p>
+    <contact></contact>
   </base-layout>
 </template>
 
 <script>
+import Contact from '@/components/Contact';
 import BaseLayout from '@/layouts/BaseLayout';
 
 export default {
   components: {
+		Contact,
 		BaseLayout
   }
 }

@@ -1,16 +1,17 @@
 <template>
-<div>
-  <Header />
-</div>
+  <base-layout>
+    <cable-search />
+  </base-layout>
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
+import BaseLayout from '@/layouts/BaseLayout';
+import CableSearch from '@/components/CableSearch'
 
 export default {
-  name: 'App',
   components: {
-    Header
+    BaseLayout,
+    CableSearch
   }
 }
 </script>

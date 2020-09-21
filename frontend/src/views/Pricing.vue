@@ -1,14 +1,16 @@
 <template>
   <base-layout>
-    <p>Главная</p>
-  </base-layout>
+		<pricing></pricing>
+	</base-layout>
 </template>
 
 <script>
+import Pricing from '@/components/Pricing';
 import BaseLayout from '@/layouts/BaseLayout';
 
 export default {
   components: {
+		Pricing,
 		BaseLayout
   }
 }

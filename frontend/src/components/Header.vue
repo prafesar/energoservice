@@ -19,22 +19,27 @@
           </router-link>
         </li>
         <li class="md:mx-3 md:py-6 pb-2">
-          <a class="hover:text-gray-200 focus:text-gray-200 text-white" href="#">
-            Stations
-          </a>
+          <router-link 
+            class="hover:text-gray-200 focus:text-gray-200 text-white"
+            :to="{ name: 'events' }">
+            Events
+          </router-link>
         </li>
         <li class="md:mx-3 md:py-6 pb-2">
-          <a class="hover:text-gray-200 focus:text-gray-200 text-white" href="#">
-            FAQ
-          </a>
+          <router-link 
+            class="hover:text-gray-200 focus:text-gray-200 text-white"
+            :to="{ name: 'pricing' }">
+            Pricing
+          </router-link>
         </li>
         <li class="md:mx-3 md:py-6 pb-2">
-          <a class="hover:text-gray-200 focus:text-gray-200 text-white" href="#">
-            Contact
-          </a>
+          <router-link 
+            class="hover:text-gray-200 focus:text-gray-200 text-white"
+            :to="{ name: 'contact' }">
+            Contacts
+          </router-link>
         </li>
       </ul>
-      <router-view/>
       <div class="flex">
         <a class="md:my-4 mt-2 mr-2 md:mr-4 mb-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 border-2 border-gray-200 hover:border-gray-300 rounded shadow-lg text-gray-800" href="#">
           Sign In
@@ -62,5 +67,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+
+.nav-link {
+  @apply text-white
+}
+.nav-link:focus {
+  @apply text-gray-200
+}
+.nav-link:hover {
+  @apply text-gray-200
+}
+.nav-item {
+  @apply pb-2
+}
 
 </style>
