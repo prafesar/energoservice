@@ -1,8 +1,9 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
 
-import '@/assets/css/tailwind.css'
-import './assets/tailwind.css'
+import router from "@/router";
+import '@/assets/css/tailwind.css';
 
 createApp(App)
-  .mount('#app')
+  .use(router)
+  .mount("#app");
