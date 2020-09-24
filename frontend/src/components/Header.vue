@@ -39,6 +39,13 @@
             Contacts
           </router-link>
         </li>
+        <li class="md:mx-3 md:py-6 pb-2">
+          <router-link 
+            class="hover:text-gray-200 focus:text-gray-200 text-white"
+            :to="{ name: 'devPage' }">
+            Dev
+          </router-link>
+        </li>
       </ul>
       <div class="flex">
         <a class="md:my-4 mt-2 mr-2 md:mr-4 mb-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 border-2 border-gray-200 hover:border-gray-300 rounded shadow-lg text-gray-800" href="#">
@@ -60,8 +67,16 @@
 </template>
 
 <script>
+import test from '@/router';
+
 export default {
   name: 'Header',
+  data() {
+    return {
+      d: test
+    }
+  },
+  created() { console.log('eeeee' + JSON.stringify(this.d)) }
 }
 </script>
 

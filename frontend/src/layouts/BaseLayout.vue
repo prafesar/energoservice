@@ -1,9 +1,12 @@
 <template>
-  <fragment>
+  <div>
     <Header />
-    <slot></slot>
+    <div class="flex flex-wrap flex-auto justify-center justify-items-center">
+      <slot></slot>
+    </div>
+    
     <Footer />
-  </fragment>
+  </div>
 </template>
 
 <script>

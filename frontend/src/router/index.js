@@ -5,8 +5,11 @@ import Cables from '@/views/Cables'
 import Contact from '@/views/Contact'
 import Pricing from '@/views/Pricing'
 import Events from '@/views/Events'
+import DevPage from '@/views/DevPage'
 
-const routes = [
+export const test = 'asdfdasf';
+
+export const routes = [
   {
     path: '/',
     name: 'main',
@@ -26,12 +29,16 @@ const routes = [
     path: '/pricing',
     name: 'pricing',
     component: Pricing
-  }
-  ,
+  },
   {
     path: '/contact',
     name: 'contact',
     component: Contact
+  },
+  {
+    path: '/dev',
+    name: 'devPage',
+    component: DevPage
   }
 ];
 
