@@ -1,19 +1,11 @@
 <template>
-  <base-layout>
-		<event-list></event-list>
-	</base-layout>
+  <p> events </p>
 </template>
 
 <script>
-import EventList from '@/components/EventList';
-import BaseLayout from '@/layouts/BaseLayout';
-
-export default {
-  components: {
-		EventList,
-		BaseLayout
+  export default {
+    name: 'Events'
   }
-}
 </script>
 
 <style>

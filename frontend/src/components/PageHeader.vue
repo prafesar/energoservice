@@ -14,8 +14,8 @@
         <li class="md:mx-3 md:py-6 pb-2">
           <router-link 
             class="hover:text-gray-200 focus:text-gray-200 text-white"
-            :to="{ name: 'cables' }">
-            Cables
+            :to="{ name: 'units' }">
+            Units
           </router-link>
         </li>
         <li class="md:mx-3 md:py-6 pb-2">
@@ -25,33 +25,18 @@
             Events
           </router-link>
         </li>
-        <li class="md:mx-3 md:py-6 pb-2">
-          <router-link 
-            class="hover:text-gray-200 focus:text-gray-200 text-white"
-            :to="{ name: 'pricing' }">
-            Pricing
-          </router-link>
-        </li>
-        <li class="md:mx-3 md:py-6 pb-2">
-          <router-link 
-            class="hover:text-gray-200 focus:text-gray-200 text-white"
-            :to="{ name: 'contact' }">
-            Contacts
-          </router-link>
-        </li>
-        <li class="md:mx-3 md:py-6 pb-2">
-          <router-link 
-            class="hover:text-gray-200 focus:text-gray-200 text-white"
-            :to="{ name: 'devPage' }">
-            Dev
-          </router-link>
-        </li>
       </ul>
       <div class="flex">
-        <a class="md:my-4 mt-2 mr-2 md:mr-4 mb-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 border-2 border-gray-200 hover:border-gray-300 rounded shadow-lg text-gray-800" href="#">
+        <a
+          class="md:my-4 mt-2 mr-2 md:mr-4 mb-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 border-2 border-gray-200 hover:border-gray-300 rounded shadow-lg text-gray-800"
+          href="#"
+        >
           Sign In
         </a>
-        <a class="md:my-4 mt-2 mb-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 border-2 border-blue-600 hover:border-blue-700 rounded shadow-lg text-white" href="#">
+        <a 
+          class="md:my-4 mt-2 mb-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 border-2 border-blue-600 hover:border-blue-700 rounded shadow-lg text-white"
+          href="#"
+        >
           Sign Up
         </a>
       </div>
@@ -67,16 +52,9 @@
 </template>
 
 <script>
-import test from '@/router';
 
 export default {
   name: 'Header',
-  data() {
-    return {
-      d: test
-    }
-  },
-  created() { console.log('eeeee' + JSON.stringify(this.d)) }
 }
 </script>
 

@@ -1,19 +1,22 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Main from '@/views/Main'
+import Units from '@/views/Units'
 import Cables from '@/views/Cables'
-import Contact from '@/views/Contact'
-import Pricing from '@/views/Pricing'
 import Events from '@/views/Events'
-import DevPage from '@/views/DevPage'
 
-export const test = 'asdfdasf';
-
-export const routes = [
+const routes = [
   {
     path: '/',
     name: 'main',
-    component: Main
+    component: Events
+  },
+  {
+    path: '/units/:unitId',
+    name: 'units',
+    component: Units,
+    children: [
+      { path: '/cables', component: Cables}
+    ]
   },
   {
     path: '/cables',
@@ -25,21 +28,6 @@ export const routes = [
     name: 'events',
     component: Events
   },
-  {
-    path: '/pricing',
-    name: 'pricing',
-    component: Pricing
-  },
-  {
-    path: '/contact',
-    name: 'contact',
-    component: Contact
-  },
-  {
-    path: '/dev',
-    name: 'devPage',
-    component: DevPage
-  }
 ];
 
 const router = createRouter({
