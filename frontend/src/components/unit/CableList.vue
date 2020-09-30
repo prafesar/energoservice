@@ -1,19 +1,24 @@
 <template>
-  <div>
-    <ul v-if="unitId" class="cables">
-      <li :key=cable.id v-for="cable in cables">
-        <h3 class="cable__title">{{cable.title}}</h3>
-        
-      </li>
+  <div class="w-screen">
+    <ul v-if="unitId" class="cables flex flex-col p-3 justify-center px-auto">
+      <cable-item v-for="cable in cables"
+        :key="cable.id"
+        :title="cable.title"
+        :fider="cable.fider"
+      ></cable-item>
     </ul>
   </div>
 </template>
 
 <script>
 import cableService from '../../services/cable-service';
+import CableItem from '@/components/cable/CableItem';
 
 export default {
   name: 'CableList',
+  components: {
+    CableItem
+  },
   data() {
     return {
       cables: [],
