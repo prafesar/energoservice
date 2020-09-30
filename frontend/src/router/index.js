@@ -1,17 +1,21 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import UnitList from '../components/branch/UnitList';
-import CableList from '../components/unit/CableList';
+import BranchUnitList from '../components/branch/BranchUnitList';
+import UnitCableList from '../components/unit/UnitCableList';
 import CableCard from '@/components/cable/CableCard';
 
 const routes = [
   {
     path: '/',
-    component: UnitList
+    component: BranchUnitList
+  },
+  {
+    path: '/branch',
+    component: BranchUnitList
   },
   {
     path: '/unit/:id/cables',
-    component: CableList
+    component: UnitCableList
   },
   {
     path: '/cable/:id/',

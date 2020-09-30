@@ -14,15 +14,8 @@
         <li class="md:mx-3 md:py-6 pb-2">
           <router-link 
             class="hover:text-gray-200 focus:text-gray-200 text-white"
-            to="#">
-            Units
-          </router-link>
-        </li>
-        <li class="md:mx-3 md:py-6 pb-2">
-          <router-link 
-            class="hover:text-gray-200 focus:text-gray-200 text-white"
-            to="#">
-            Events
+            to="/branch">
+            Cables
           </router-link>
         </li>
       </ul>

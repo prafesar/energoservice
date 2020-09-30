@@ -1,10 +1,16 @@
 <template>
-  <ul class="units">
-    <li :key=unit.id v-for="unit in units">
-      <h3 class="unit__title">{{unit.title}}</h3>
-      <router-link tag="p" :to="'/unit/' + unit.id + '/cables'">
-        link
+  <ul class="units flex flex-col items-center">
+    <li
+      class="bg-teal-800 m-1 w-4/5
+       rounded-lg p-4"
+      :key=unit.id v-for="unit in units"
+    >
+      <router-link
+        class="text-white"
+        :to="'/unit/' + unit.id + '/cables'">
+        {{unit.title}}
       </router-link>
+      <!-- add fiders list by unit -->
     </li>
   </ul> 
 </template>
@@ -13,7 +19,7 @@
 import branchService from '@/services/branch-service';
 
 export default {
-  name: 'UnitList',
+  name: 'BranchUnitList',
   data() {
     return {
       units: [],
