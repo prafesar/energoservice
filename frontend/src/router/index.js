@@ -1,33 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Units from '@/views/Units'
-import Cables from '@/views/Cables'
-import Events from '@/views/Events'
+import UnitList from '../components/branch/UnitList';
+import CableList from '../components/unit/CableList';
 
 const routes = [
   {
     path: '/',
-    name: 'main',
-    component: Events
+    component: UnitList
   },
   {
-    path: '/units/:unitId',
-    name: 'units',
-    component: Units,
-    children: [
-      { path: '/cables', component: Cables}
-    ]
-  },
-  {
-    path: '/cables',
-    name: 'cables',
-    component: Cables
-  },
-  {
-    path: '/events',
-    name: 'events',
-    component: Events
-  },
+    path: '/unit/:id/cables',
+    component: CableList
+  }
 ];
 
 const router = createRouter({

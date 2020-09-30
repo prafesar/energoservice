@@ -14,14 +14,14 @@
         <li class="md:mx-3 md:py-6 pb-2">
           <router-link 
             class="hover:text-gray-200 focus:text-gray-200 text-white"
-            :to="{ name: 'units' }">
+            to="#">
             Units
           </router-link>
         </li>
         <li class="md:mx-3 md:py-6 pb-2">
           <router-link 
             class="hover:text-gray-200 focus:text-gray-200 text-white"
-            :to="{ name: 'events' }">
+            to="#">
             Events
           </router-link>
         </li>
@@ -52,26 +52,25 @@
 </template>
 
 <script>
-
 export default {
-  name: 'Header',
+  
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-
 .nav-link {
-  @apply text-white
+  @apply text-white;
 }
 .nav-link:focus {
-  @apply text-gray-200
+  @apply text-gray-200;
 }
 .nav-link:hover {
-  @apply text-gray-200
+  @apply text-gray-200;
 }
 .nav-item {
-  @apply pb-2
+  @apply pb-2;
 }
-
 </style>
+
+
