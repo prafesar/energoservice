@@ -2,18 +2,18 @@
   <div>
     <page-header />
     <router-view />
-    <page-footer />
+    <!-- <page-footer /> -->
   </div>
 </template>
 
 <script>
 import PageHeader from '@/components/PageHeader';
-import PageFooter from '@/components/PageFooter';
+// import PageFooter from '@/components/PageFooter';
 
 export default {
   components: {
     PageHeader,
-    PageFooter
+    // PageFooter
   }
 }
 </script>

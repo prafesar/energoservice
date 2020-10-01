@@ -19,7 +19,7 @@
           </router-link>
         </li>
       </ul>
-      <div class="flex">
+      <!-- <div class="flex">
         <a
           class="md:my-4 mt-2 mr-2 md:mr-4 mb-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 border-2 border-gray-200 hover:border-gray-300 rounded shadow-lg text-gray-800"
           href="#"
@@ -32,7 +32,7 @@
         >
           Sign Up
         </a>
-      </div>
+      </div> -->
       <button class="absolute top-0 right-0 m-5 px-1 md:hidden rounded hover:text-gray-200 focus:text-gray-200 text-white">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
           <line x1="3" y1="12" x2="21" y2="12" />
