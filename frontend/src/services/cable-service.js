@@ -78,15 +78,21 @@ const data = {
   ]
 }
 export default {
-  getCableListByUnitId(unitId) {
-    console.log(unitId);
-    return data.cables;
-  },
-  getCableListByFiderId(fiderId) {
-    console.log(fiderId);
-    return data.cables.slice(10, 25);
-  },
-  getCableById(cableId) {
-    return data.cables.find(cable => cable.id === cableId);
-  }
+  getCableListByUnitId,
+  getCableListByFiderId,
+  getCableById
+}
+
+export function getCableListByUnitId(unitId) {
+  console.log(unitId);
+  return data.cables;
+}
+
+export function getCableListByFiderId(fiderId) {
+  console.log(fiderId);
+  return data.cables.slice(10, 25);
+}
+
+export function getCableById(cableId) {
+  return data.cables.find(cable => cable.id === cableId);
 }

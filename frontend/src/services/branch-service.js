@@ -33,10 +33,14 @@ const data = {
   ]
 }
 export default {
-  getCurrentBranchId: function() {
-    return 'molEs';
-  },
-  getUnitListByBranchId: function(branchId) {
-    return data.units.filter(unit => unit.branchId === branchId);
-  },
+  getDefaultBranchId,
+  getUnitListByBranchId
+}
+
+export function getDefaultBranchId() {
+  return 'molEs';
+}
+
+export function getUnitListByBranchId(branchId) {
+  return data.units.filter(unit => unit.branchId === branchId);
 }

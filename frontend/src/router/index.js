@@ -11,7 +11,12 @@ const routes = [
   },
   {
     path: '/branch',
-    component: BranchUnitList
+    component: BranchUnitList,
+  },
+  {
+    path: '/branch/:id',
+    component: BranchUnitList,
+    name: 'branch-unit-list'
   },
   {
     path: '/unit/:id/cables',

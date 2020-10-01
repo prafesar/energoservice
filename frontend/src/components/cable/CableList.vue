@@ -4,6 +4,7 @@
       flex flex-col content-center divide-y-2 divide-gray-400">
       <cable-item v-for="cable in cables"
         :key="cable.id"
+        :id="cable.id"
         :title="cable.title"
         :fider="cable.fider"
       ></cable-item>

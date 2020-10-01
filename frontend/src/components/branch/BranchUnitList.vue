@@ -16,19 +16,27 @@
 </template>
 
 <script>
-import branchService from '@/services/branch-service';
+import { getDefaultBranchId, getUnitListByBranchId } from '@/services/branch-service';
 
 export default {
   name: 'BranchUnitList',
   data() {
     return {
       units: [],
-      branchId: '',
+      branchId: this.$route.params.id,
     }
   },
   created() {
-    this.branchId = branchService.getCurrentBranchId();
-    this.units = branchService.getUnitListByBranchId(this.branchId);
-  }
+    if (!this.branchId) {
+      const id = getDefaultBranchId();
+      this.$router.push({ name: 'branch-unit-list', params: { id } });
+    }
+    this.units = getUnitListByBranchId(this.branchId);
+  },
+  // watch: {
+  //   '$route'(to) {
+  //     this.branchId = to.params.id;
+  //   }
+  // }
 }
 </script>

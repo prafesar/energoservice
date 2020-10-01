@@ -14,7 +14,7 @@
         <li class="md:mx-3 md:py-6 pb-2">
           <router-link 
             class="hover:text-gray-200 focus:text-gray-200 text-white"
-            to="/branch">
+            to="/branch/molEs">
             Cables
           </router-link>
         </li>
