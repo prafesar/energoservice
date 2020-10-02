@@ -1,28 +1,13 @@
 <template>
   <div class="cable-card flex-col justify-between p-2 m-1 ">
-    <p class="cable-title text-black text-center" >{{cable.title}}</p>
-    <p class="cable-fider text-gray-500 text-center">{{cable.fider}}</p>
-    <cable-form />
+    <p class="cable-title text-black text-center" >{{title}}</p>
+    <p class="cable-fider text-gray-500 text-center">{{fider}}</p>
   </div>
 </template>
 
 <script>
-import cableService from '@/services/cable-service';
-import CableForm from '@/components/cable/CableForm';
-
 export default {
   name: 'CableCard',
-  components: { CableForm },
-  data() {
-    return {
-      cable: {},
-      events: [],
-      cableId: '',
-    }
-  },
-  created() {
-    this.cableId = this.$route.params.id;
-    this.cable = cableService.getCableById(this.cableId);
-  }
+  props: [ 'title', 'fider' ],
 }
 </script>

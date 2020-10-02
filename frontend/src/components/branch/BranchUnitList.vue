@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { getDefaultBranchId, getUnitListByBranchId } from '@/services/branch-service';
+import { getUnitListByBranchId } from '@/services/branch-service';
 
 export default {
   name: 'BranchUnitList',
@@ -27,11 +27,7 @@ export default {
     }
   },
   created() {
-    if (!this.branchId) {
-      const id = getDefaultBranchId();
-      this.$router.push({ name: 'branch-unit-list', params: { id } });
-    }
-    this.units = getUnitListByBranchId(this.branchId);
+      this.units = getUnitListByBranchId(this.branchId);
   },
   // watch: {
   //   '$route'(to) {

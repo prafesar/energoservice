@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import BranchUnitList from '../components/branch/BranchUnitList';
 import UnitCableList from '../components/unit/UnitCableList';
-import CableCard from '@/components/cable/CableCard';
+import Cable from '@/views/Cable';
+import Branch from '@/views/Branch';
+import Unit from '@/views/Unit';
 
 const routes = [
   {
@@ -10,22 +12,23 @@ const routes = [
     component: BranchUnitList
   },
   {
-    path: '/branch',
-    component: BranchUnitList,
+    path: '/branch/:branchId',
+    component: Branch,
+    name: 'branch'
   },
   {
-    path: '/branch/:id',
-    component: BranchUnitList,
-    name: 'branch-unit-list'
+    path: '/unit/:unitId',
+    component: Unit,
+    name: 'unit'
   },
   {
-    path: '/unit/:id/cables',
+    path: '/unit/:unitId/cables',
     component: UnitCableList
   },
   {
-    path: '/cable/:id/',
-    name: 'cable-card',
-    component: CableCard
+    path: '/unit/:unitId/cable/:cableId/',
+    component: Cable,
+    name: 'cable'
   }
 ];
 

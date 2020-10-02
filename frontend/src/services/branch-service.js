@@ -1,4 +1,10 @@
 const data = {
+  branches: [
+    {
+      id: 'molEs',
+      title: 'Молодечненские ЭС'
+    }
+  ],
   units: [
     {
       id: 'molRes',
@@ -33,14 +39,23 @@ const data = {
   ]
 }
 export default {
-  getDefaultBranchId,
-  getUnitListByBranchId
+  getBranchById,
+  getUnitListByBranchId,
+  getUnitById
 }
 
-export function getDefaultBranchId() {
-  return 'molEs';
+export function getBranchById(branchId) {
+  const res = data.branches.find(br => br.id === branchId);
+  console.log(res);
+  return res;
 }
 
 export function getUnitListByBranchId(branchId) {
-  return data.units.filter(unit => unit.branchId === branchId);
+  const res = data.units.filter(unit => unit.branchId === branchId);
+  console.log(res);
+  return res;
+}
+
+export function getUnitById(unitId) {
+  return data.units.find(unit => unit.id === unitId);
 }

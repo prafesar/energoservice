@@ -75,17 +75,48 @@ const data = {
     { id: 'lo', title: 'Гиревичи - СР Луч', fider: 'Ф174 → ВолРЭС → Гиревичи 1СШ' },
     { id: 'de', title: 'Гиревичи - СР Колосок', fider: 'Ф175 → ВолРЭС → Гиревичи 1СШ' },
     { id: 'er', title: 'Гиревичи - СР Головной', fider: 'Ф176 → ВолРЭС → Гиревичи 1СШ' },
+  ],
+  fiders: [
+    { number: 234, id: 'gsrrtf53', title: 'Ф101 → Чисть 1СШ' },
+    { number: 234, id: 'd34667fg', title: 'Ф324 → Чисть 1СШ' },
+    { number: 234, id: 'bmjugf4567', title: 'Ф433 → Чисть 1СШ' },
+    { number: 234, id: 'bnky6', title: 'Ф162 → Чисть 1СШ' },
+    { number: 234, id: 'sdfg64', title: 'Ф172 → Чисть 1СШ' },
+    { number: 234, id: 'dsfgb', title: 'Ф442 → Чисть 1СШ' },
+    { number: 234, id: 'gsrf53', title: 'Ф101 → Чисть 1СШ' },
+    { number: 234, id: 'd34667fg', title: 'Ф324 → Чисть 1СШ' },
+    { number: 234, id: 'bmgf4567', title: 'Ф433 → Чисть 1СШ' },
+    { number: 234, id: 'bn6', title: 'Ф142 → Чисть 1СШ' },
+    { number: 234, id: 'sdfg64', title: 'Ф172 → Чисть 1СШ' },
+    { number: 234, id: 'dsf', title: 'Ф442 → Чисть 1СШ' },
+    { number: 234, id: 'gsrrtf53', title: 'Ф101 → Чисть 1СШ' },
+    { number: 234, id: 'd34667fg', title: 'Ф324 → Чисть 1СШ' },
+    { number: 234, id: 'bmjugf4567', title: 'Ф433 → Чисть 1СШ' },
+    { number: 234, id: 'bnky6', title: 'Ф162 → Чисть 1СШ' },
+    { number: 234, id: 'sdfg64', title: 'Ф172 → Чисть 1СШ' },
+    { number: 234, id: 'dsfgb', title: 'Ф442 → Чисть 1СШ' },
+    { number: 234, id: 'gsrf53', title: 'Ф101 → Чисть 1СШ' },
+    { number: 234, id: 'd34667fg', title: 'Ф324 → Чисть 1СШ' },
+    { number: 234, id: 'bmgf4567', title: 'Ф433 → Чисть 1СШ' },
+    { number: 234, id: 'bn6', title: 'Ф142 → Чисть 1СШ' },
+    { number: 234, id: 'sdfg64', title: 'Ф172 → Чисть 1СШ' },
   ]
 }
 export default {
   getCableListByUnitId,
   getCableListByFiderId,
-  getCableById
+  getCableById,
+  getFiderListByUnitId
 }
 
 export function getCableListByUnitId(unitId) {
   console.log(unitId);
   return data.cables;
+}
+
+export function getFiderListByUnitId(unitId) {
+  console.log('get fiderList by unit Id' + unitId);
+  return data.fiders;
 }
 
 export function getCableListByFiderId(fiderId) {
