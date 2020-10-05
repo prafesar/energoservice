@@ -40,7 +40,7 @@ const data = {
       number: 21,
       branchId: 'molEs',
       title: 'Вилейский РЭС',
-      shortTitle: 'ВолРЭС'
+      shortTitle: 'ВилРЭС'
     },
   ]
 }

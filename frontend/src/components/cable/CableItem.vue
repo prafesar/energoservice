@@ -5,7 +5,7 @@
       class="cable-title text-black"
     >{{title}}</router-link>
     <p class="cable-fider text-gray-500">
-      {{fider}}
+      {{subTitle}}
     </p>
   </li>
 </template>
@@ -15,12 +15,12 @@ export default {
   name: 'CableItem',
   props: {
     unitId: String,
+    cableId: String,
     title: {
       type: String,
       default: 'Not get cable title'
     },
-    fider: String,
-    cableId: String
+    subTitle: String
   }
 }
 </script>

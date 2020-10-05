@@ -1,58 +1,94 @@
 <template>
-  <div class="branch-cables">
-    <h1 class="branch-title">{{branch.title}}</h1>
-    <div v-for="unit in units" :key="unit.id">
-      <h2 class="unit-title" @click="fetchUnitData(unit.id)">
-        {{unit.title}} 
-      </h2>
-      <div class="unit-fider-list">
-        <span class="fider-number" :key="fider.id" v-for="fider in fiders[unit.id]"> - {{fider.number}}</span>
+  <div class="branch-cables ml-4">
+    <div class="cable-filter flex flex-wrap justify-start gap-2">
+      <div
+        v-for="unit in units"
+        :key="unit.id"
+        class="unit-title bg-gray-600 text-white py-1 px-2 rounded-md" 
+        @click="fetchCableListByUnitId(unit.id)"
+      >
+        {{unit.shortTitle}} 
       </div>
-      <cable-list :cables="cables[unit.id]" :unitId="unit.id"/> <!--  add unit id -->
+      <div
+          class="fider-number bg-green-500 text-white py-1 px-2 rounded-md"
+          :key="number"
+          v-for="(number) in fiders"
+          @click="toggleFider(number)"
+        >
+         {{number}}
+      </div>
     </div>
+    <cable-list :cables="filteredList"/> 
   </div>
 </template>
 
 <script> // branch/:branchId/cables/
-import { getBranchById, getUnitListByBranchId } from '@/services/branch-service';
-import { getCableListByUnitId, getFiderListByUnitId } from '@/services/cable-service';
+import { getUnitListByBranchId } from '@/services/branch-service';
+import { getCableListByUnitId } from '@/services/cable-service';
 import CableList from '@/components/cable/CableList';
 
 export default {
-  name: 'Branch',
+  name: 'BranchCables',
   components: {
     CableList
   },
   data() {
     return {
       branchId: this.$route.params.branchId,
-      branch: {},
       units: [],
       cables: {}, // { unitId: [{}, {}, {}], ... }
-      fiders: {}
+      filter: {
+        fider: null,
+        unit: '',
+        search: ''
+      }
     }
   },
   created() {
-    this.branch = getBranchById(this.branchId);
-    this.units = [ this.units, ...getUnitListByBranchId(this.branchId) ];
+    this.units = getUnitListByBranchId(this.branchId);
   },
   methods: {
     fetchCableListByUnitId(unitId) {
       if (!this.cables[unitId]) {
-        this.cables = {...this.cables, [unitId]: getCableListByUnitId(unitId) }
+        this.cables[unitId] = getCableListByUnitId(unitId);
       }
+      this.toggleUnit(unitId);
+      this.filter.fider = '';
       return;
     },
-    fetchFiderListByUnitId(unitId) {
-      if (!this.fiders[unitId]) {
-        this.fiders = { ...this.fiders, [unitId]: getFiderListByUnitId(unitId) } 
-      }
-      return;
+    toggleUnit(unitId) {
+      this.filter.unit = unitId;
     },
-    fetchUnitData(unitId) {
-      this.fetchCableListByUnitId(unitId);
-      this.fetchFiderListByUnitId(unitId);
-      return;
+    toggleFider(num) {
+      this.filter.fider = num;
+    },
+    onSearch() {
+
+    }
+  },
+  computed: {
+    filteredList() {
+      // filter by Unit
+      const currUnit = this.filter.unit;
+      const byUnit = currUnit ? this.cables[currUnit] : [];
+      // filter by Fider
+      const currFider = this.filter.fider;
+      const byFider = currFider ? byUnit.filter(item => item.fider === currFider) : byUnit;
+      // filter by Search
+      // const currSearch = this.filter.search;
+      // const bySearch = currSearch ?
+      return byFider; 
+      // all cables
+      // const res = Object.values(this.cables).flat();
+    },
+    cableCount() {
+      return this.filteredList.length;
+    },
+    fiders() { // numbers
+      const currUnit = this.filter.unit;
+      const cables = currUnit ? this.cables[currUnit] : []
+      const fiders = cables.map(cable => cable.fider);
+      return new Set(fiders);
     }
   }
 }

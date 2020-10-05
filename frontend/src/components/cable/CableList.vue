@@ -5,9 +5,9 @@
       <cable-item v-for="cable in cables"
         :key="cable.id"
         :cableId="cable.id"
-        :unitId="unitId"
+        :unitId="cable.unitId"
         :title="cable.title"
-        :fider="cable.fider"
+        :subTitle="cable.subTitle"
       ></cable-item>
     </ul>
   </div>
@@ -22,7 +22,6 @@ export default {
     CableItem
   },
   props: {
-    unitId: String,
     cables: Array,
   }
 }
