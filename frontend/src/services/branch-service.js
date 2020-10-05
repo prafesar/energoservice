@@ -2,7 +2,8 @@ const data = {
   branches: [
     {
       id: 'molEs',
-      title: 'Молодечненские ЭС'
+      title: 'Молодечненские ЭС',
+      shortTitle: 'МолЭС'
     }
   ],
   units: [
@@ -10,31 +11,36 @@ const data = {
       id: 'molRes',
       number: 17,
       branchId: 'molEs',
-      title: 'Молодечненский РЭС'
+      title: 'Молодечненский РЭС',
+      shortTitle: 'МолРЭС'
     },
     {
       id: 'gorRes',
       number: 18,
       branchId: 'molEs',
-      title: 'Городской РЭС'
+      title: 'Городской РЭС',
+      shortTitle: 'ГорРЭС'
     },
     {
       id: 'mjadRes',
       number: 19,
       branchId: 'molEs',
-      title: 'Мядельский РЭС'
+      title: 'Мядельский РЭС',
+      shortTitle: 'МядРЭС'
     },
     {
       id: 'volRes',
       number: 20,
       branchId: 'molEs',
-      title: 'Воложинский РЭС'
+      title: 'Воложинский РЭС',
+      shortTitle: 'ВолРЭС'
     },
     {
       id: 'vilRes',
       number: 21,
       branchId: 'molEs',
-      title: 'Вилейский РЭС'
+      title: 'Вилейский РЭС',
+      shortTitle: 'ВолРЭС'
     },
   ]
 }
