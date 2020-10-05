@@ -1,29 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import BranchUnitList from '../components/branch/BranchUnitList';
-import UnitCableList from '../components/unit/UnitCableList';
+import BranchCables from '@/views/BranchCables';
 import Cable from '@/views/Cable';
-import Branch from '@/views/Branch';
-import Unit from '@/views/Unit';
+
 
 const routes = [
   {
     path: '/',
-    component: BranchUnitList
+    redirect: '/branch/molEs/cables/'
   },
   {
-    path: '/branch/:branchId',
-    component: Branch,
-    name: 'branch'
-  },
-  {
-    path: '/unit/:unitId',
-    component: Unit,
-    name: 'unit'
-  },
-  {
-    path: '/unit/:unitId/cables',
-    component: UnitCableList
+    path: '/branch/:branchId/cables',
+    component: BranchCables,
+    name: 'branch-cables'
   },
   {
     path: '/unit/:unitId/cable/:cableId/',

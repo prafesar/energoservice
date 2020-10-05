@@ -11,7 +11,11 @@ list of Unit's card with short list of links to:
 ## Unit
 `unit/:unitId`
 
-Unit Page with full llist of links and graphics
+Unit Page with full llist of links
+
+## Cables
+`branch/:branchId/cables`
+
 
 ## Cable 
 `unit/:unitId/cable/:cableId`

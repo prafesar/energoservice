@@ -1,5 +1,5 @@
 <template>
-  <div class="branch">
+  <div class="branch-cables">
     <h1 class="branch-title">{{branch.title}}</h1>
     <div v-for="unit in units" :key="unit.id">
       <h2 class="unit-title" @click="fetchUnitData(unit.id)">
@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<script> // branch/:branchId
+<script> // branch/:branchId/cables/
 import { getBranchById, getUnitListByBranchId } from '@/services/branch-service';
 import { getCableListByUnitId, getFiderListByUnitId } from '@/services/cable-service';
 import CableList from '@/components/cable/CableList';
