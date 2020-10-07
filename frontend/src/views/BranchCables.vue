@@ -3,17 +3,19 @@
     <hr>
     <div class="cable-filter flex flex-wrap justify-start gap-4">
       <div
-        class="unit-title flex bg-gray-600 text-white py-1 px-2 m-1 rounded-md" 
+        class="unit-title flex border bg-gray-700 text-white py-1 px-2 m-1 rounded-md" 
         v-for="unit in units"
         :key="unit.id"
+        :class="{ selected: unit.id === filter.unitId }"
         @click="fetchCableListByUnitId(unit.id)"
       >
         {{unit.shortTitle}} 
       </div>
       <div
-        class="fider-number flex bg-green-500 text-white py-1 px-2 m-1 rounded-md"
+        class="fider-number flex border text-white py-1 px-2 m-1 rounded-md bg-green-600"
         v-for="(number) in fiderList"
         :key="number"
+        :class="{ selected: number === filter.fider }"
         @click="toggleFider(number)"
       >
         {{number}}
@@ -55,3 +57,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .selected {
+    @apply bg-red-500;
+  }
+</style>

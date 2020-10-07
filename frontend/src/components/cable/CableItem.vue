@@ -1,7 +1,7 @@
 <template>
   <li
     class="cable-item flex-col justify-between 
-    border-1 border-black rounded-md p-4 m-1 shadow bg-blue-900"
+    border-1 border-black rounded-md p-4 m-1 shadow bg-gray-700"
   >
     <!--  :to="{ name: 'cable-card', params: { id } }" -->
     <router-link 
