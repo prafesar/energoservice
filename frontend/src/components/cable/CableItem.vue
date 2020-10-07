@@ -1,10 +1,17 @@
 <template>
-  <li class="cable-item flex-col justify-between p-2 m-1 ">
-    <!-- <router-link :to="{ name: 'cable-card', params: { id } }" tag="p" -->
-    <router-link :to="`/unit/${unitId}/cable/${cableId}`" tag="p"
-      class="cable-title text-black"
-    >{{title}}</router-link>
-    <p class="cable-fider text-gray-500">
+  <li
+    class="cable-item flex-col justify-between 
+    border-1 border-black rounded-md p-4 m-1 shadow bg-blue-900"
+  >
+    <!--  :to="{ name: 'cable-card', params: { id } }" -->
+    <router-link 
+      tag="p"
+      class="cable-title text-white font-medium"
+      :to="`/unit/${unitId}/cable/${cableId}`"
+    >
+      {{title}}
+    </router-link>
+    <p class="cable-fider text-gray-400 font-thin">
       {{subTitle}}
     </p>
   </li>

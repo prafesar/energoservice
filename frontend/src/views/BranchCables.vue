@@ -1,23 +1,25 @@
 <template>
   <div class="branch-cables ml-4">
-    <div class="cable-filter flex flex-wrap justify-start gap-2">
+    <hr>
+    <div class="cable-filter flex flex-wrap justify-start gap-4">
       <div
+        class="unit-title flex bg-gray-600 text-white py-1 px-2 m-1 rounded-md" 
         v-for="unit in units"
         :key="unit.id"
-        class="unit-title bg-gray-600 text-white py-1 px-2 rounded-md" 
         @click="fetchCableListByUnitId(unit.id)"
       >
         {{unit.shortTitle}} 
       </div>
       <div
-          class="fider-number bg-green-500 text-white py-1 px-2 rounded-md"
-          :key="number"
-          v-for="(number) in fiderList"
-          @click="toggleFider(number)"
-        >
-         {{number}}
+        class="fider-number flex bg-green-500 text-white py-1 px-2 m-1 rounded-md"
+        v-for="(number) in fiderList"
+        :key="number"
+        @click="toggleFider(number)"
+      >
+        {{number}}
       </div>
     </div>
+    <hr>
     <cable-list :cables="cableList"/> 
   </div>
 </template>
@@ -47,16 +49,8 @@ export default {
       fetchUnitList(props.branchId)
     });
     return {
-      units,
-      cables,
-      filter,
-      fiderList,
-      cableList,
-      cableCount,
-      fetchUnitList,
-      fetchCableListByUnitId,
-      toggleUnit,
-      toggleFider
+      units, cables, filter, fiderList, cableList, cableCount,
+      fetchUnitList, fetchCableListByUnitId, toggleUnit, toggleFider
     }
   }
 }
