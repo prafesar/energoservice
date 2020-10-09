@@ -1,4 +1,4 @@
-import { reactive, computed, toRefs } from 'vue';
+import { reactive, computed, readonly } from 'vue';
 
 import { getUnitListByBranchId } from '@/services/branch-service';
 import { getCableListByUnitId } from '@/services/cable-service';
@@ -62,7 +62,7 @@ export default function() {
   }
 
   return {
-    ...toRefs(state),
+    state: readonly(state),
     fetchUnitList,
     fetchCableListByUnitId,
     toggleUnit,

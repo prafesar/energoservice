@@ -4,25 +4,25 @@
     <div class="cable-filter flex flex-wrap justify-start gap-4">
       <div
         class="unit-title flex border bg-gray-700 text-white py-1 px-2 m-1 rounded-md" 
-        v-for="unit in units"
+        v-for="unit in state.units"
         :key="unit.id"
-        :class="{ selected: unit.id === filter.unitId }"
+        :class="{ selected: unit.id === state.filter.unitId }"
         @click="fetchCableListByUnitId(unit.id)"
       >
         {{unit.shortTitle}} 
       </div>
       <div
         class="fider-number flex border text-white py-1 px-2 m-1 rounded-md bg-green-600"
-        v-for="(number) in fiderList"
+        v-for="(number) in state.fiderList"
         :key="number"
-        :class="{ selected: number === filter.fider }"
+        :class="{ selected: number === state.filter.fider }"
         @click="toggleFider(number)"
       >
         {{number}}
       </div>
     </div>
     <hr>
-    <cable-list :cables="cableList"/> 
+    <cable-list :cables="state.cableList"/> 
   </div>
 </template>
 
@@ -43,16 +43,15 @@ export default {
     }
   },
   setup(props) {
-    const { units, cables, filter, fiderList, cableList, cableCount,
-      fetchUnitList, fetchCableListByUnitId, toggleUnit, toggleFider
+    const {
+      state, fetchUnitList, fetchCableListByUnitId, toggleUnit, toggleFider
     } = useCables();
     
     onMounted(() => {
       fetchUnitList(props.branchId)
     });
     return {
-      units, cables, filter, fiderList, cableList, cableCount,
-      fetchUnitList, fetchCableListByUnitId, toggleUnit, toggleFider
+      state, fetchUnitList, fetchCableListByUnitId, toggleUnit, toggleFider
     }
   }
 }
