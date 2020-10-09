@@ -35,7 +35,7 @@ import { getFiderListByUnitId } from '@/services/cable-service';
 
 export default {
   name: 'CableForm',
-  params: {
+  params: { // WTF ?!!
     unitId: String,
     title: String,
     fider: String
