@@ -1,22 +1,29 @@
 <template>
-<div class="cable">
-  <button @click.prevent="onCardView()">Просмотр</button>
-  <button @click.prevent="onFormView()">Форма</button>
-  <component :is="currentComponent" v-bind="cable" :unitId="unitId"/>
-</div>
-
+  <div class="cable">
+    <p>Cables {{ cables }}</p>
+    <p>Тест {{ tt }}</p>
+    <button @click.prevent="onCardView()">Просмотр</button>
+    <button @click.prevent="onFormView()">Форма</button>
+    <component :is="currentComponent" v-bind="cable" :unitId="unitId"/>
+  </div>
 </template>
 
 <script>
+import { inject } from 'vue';
+
 import { getCableById } from '@/services/cable-service';
 import CableCard from '@/components/cable/CableCard';
-import CableForm from '@/components/cable/CableForm';
+
 
 export default {
   name: 'Cable',
   components: {
-    CableCard,
-    CableForm
+    CableCard
+  },
+  setup() {
+    const cables = inject('cables');
+    const tt = inject('test');
+    return { tt, cables };
   },
   data() {
     return {
@@ -27,16 +34,16 @@ export default {
     }
   },
   created() {
+    console.log('setup ----- cables  ' + this.cables);
+    console.log('setup ----- tt ' + this.tt);
     this.cable = getCableById(this.cableId);
   },
   methods: {
     onCardView() {
       this.currentComponent = 'CableCard';
-      console.log(this.currentComponent);
     },
     onFormView() {
       this.currentComponent = 'CableForm';
-      console.log(this.currentComponent);
     }
   }
 }

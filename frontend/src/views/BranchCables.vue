@@ -27,8 +27,7 @@
 </template>
 
 <script> // branch/:branchId/cables/
-import { onMounted } from 'vue';
-
+import { provide, ref } from 'vue';
 import useCables from '@/use/useCables';
 import CableList from '@/components/cable/CableList';
 
@@ -42,18 +41,16 @@ export default {
       default: 'molEs', // How to put branchId to setup() !??
     }
   },
-  setup(props) {
-    const {
-      state, fetchUnitList, fetchCableListByUnitId, toggleUnit, toggleFider
-    } = useCables();
-    
-    onMounted(() => {
-      fetchUnitList(props.branchId)
-    });
-    return {
-      state, fetchUnitList, fetchCableListByUnitId, toggleUnit, toggleFider
-    }
-  }
+  setup() {
+    const test = ref('test');
+    const { state } = useCables();
+    provide('cables', state);
+    provide('test', test);
+    return { ...useCables() };
+  },
+  created() {
+    return this.fetchUnitList(this.branchId);
+  },
 }
 </script>
 
