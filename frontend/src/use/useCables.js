@@ -3,15 +3,15 @@ import { reactive, computed, readonly } from 'vue';
 import { getUnitListByBranchId } from '@/services/branch-service';
 import { getCableListByUnitId } from '@/services/cable-service';
 
-export default function() {
+export default function (branchId) {
   const state = reactive({
-    units: [],
     cables: {},
     filter: {
       unitId: '',
       fider: null,
       search: ''
     },
+    units: computed(() => getUnitListByBranchId(branchId)),
     fiderList: computed(() => {
       const currUnit = state.filter.unitId;
       const cables = currUnit ? state.cables[currUnit] : []
@@ -37,11 +37,6 @@ export default function() {
     })
   });
 
-  function fetchUnitList(branchId) {
-    state.units = getUnitListByBranchId(branchId);
-    return;
-  }
-
   function fetchCableListByUnitId(unitId) {
     if (!state.cables[unitId]) {
       state.cables[unitId] = getCableListByUnitId(unitId);
@@ -63,9 +58,8 @@ export default function() {
 
   return {
     state: readonly(state),
-    fetchUnitList,
     fetchCableListByUnitId,
     toggleUnit,
     toggleFider
-  }
+  };
 }
