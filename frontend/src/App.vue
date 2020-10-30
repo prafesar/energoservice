@@ -10,6 +10,7 @@ import { toRefs, provide } from 'vue';
 
 import PageHeader from '@/components/PageHeader';
 import useCablesProvider from '@/use/useCables';
+import useAuth from '@/use/useAuth';
 
 export default {
   components: {
@@ -34,6 +35,8 @@ export default {
       toggleUnit,
       toggleFider
     })
+
+    provide ('auth', useAuth());
   }
 }
 </script>
