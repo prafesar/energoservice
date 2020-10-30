@@ -1,6 +1,4 @@
-import Firebase from 'firebase/app';
-
-const config = {
+export default config = {
   apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
   authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
   databaseURL: process.env.VUE_APP_FIREBASE_DB_URL,
@@ -10,5 +8,3 @@ const config = {
   appId: process.env.VUE_APP_FIREBASE_APP_ID,
   measurementId: process.env.VUE_APP_FIREBASE_MEASUREMENT_ID,
 };
-
-export default !Firebase.apps.length ? Firebase.initializeApp(config) : Firebase.app();
