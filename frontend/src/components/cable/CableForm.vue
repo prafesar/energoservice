@@ -3,11 +3,11 @@
     <p>Cable Form title {{title}}</p>
     <div class="elem">
       <label for="title" class="w-1/4 text-right mr-4">Название КЛ</label>
-      <input v-model="title" type="text" name="title" id="title" class="w-3/4 text-left">
+      <input v-model="cableTitle" type="text" name="title" id="title" class="w-3/4 text-left">
     </div>
     <div class="elem">
       <label for="fider" class="w-1/4 text-right mr-4">Фидер</label>
-      <select v-model="fider" name="fider" id="fider" class="w-3/4 text-left">
+      <select v-model="fiderNum" name="fider" id="fider" class="w-3/4 text-left">
         <option value="null">Выберите фидер</option>
         <option v-for="f in fiders" :key="f.id" :value="f.id">{{f.title}}</option>
       </select>
@@ -35,13 +35,16 @@ import { getFiderListByUnitId } from '@/services/cable-service';
 
 export default {
   name: 'CableForm',
-  params: { // WTF ?!!
+  props: {
     unitId: String,
     title: String,
     fider: String
   },
   data() {
     return {
+      cableUnitId: this.unitId,
+      cableTitle: this.title,
+      fiderNum: this.fider,
       owners: [
         { id: 244, title: 'Потребители' },
         { id: 245, title: 'МолЭС' },

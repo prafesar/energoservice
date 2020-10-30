@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import BranchCables from '@/views/BranchCables';
 import Cable from '@/views/Cable';
+import LoginPage from '@/views/LoginPage';
 
 
 const routes = [
@@ -18,6 +19,11 @@ const routes = [
     path: '/unit/:unitId/cable/:cableId/',
     component: Cable,
     name: 'cable'
+  },
+  {
+    path: '/login',
+    component: LoginPage,
+    name: 'login-page'
   }
 ];
 
