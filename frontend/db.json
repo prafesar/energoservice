@@ -1,0 +1,86 @@
+{
+  "lists": [
+    {
+      "type": "cables",
+      "team": {
+        "id": "molRes",
+        "title": "Молодечненский РЭС",
+        "shortTitle": "МолРЭС",
+        "stations": [
+          {
+            "id": "********",
+            "title": "Молодечно",
+            "fiders": [
+              {
+                "id": "*********",
+                "number": 234,
+                "section": 1,
+                "description": "sda flsd fdfj",
+                "cables": [
+                  [ "id", "title", "owner", "year", "length" ]
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "stations",
+      "team": {
+        "title": "Молодечненский РЭС",
+        "shortTitle": "МолРЭС",
+        "id": "molRes",
+        "subStations": [
+          [ "id", "type", "number", "owner" ]
+        ]
+      }
+    },
+    {
+      "type": "subStations",
+      "team": {
+        "title": "Молодечненский РЭС",
+        "shortTitle": "МолРЭС",
+        "id": "molRes",
+        "stations": [
+          [ "id", "number", "voltage", "title" ]
+        ]
+      }
+    }
+  ],
+
+  "cables": [
+    {
+      "id": "******",
+      "title": "ТП 345 - ТП 45",
+      "station": { "id": "*****", "title": "Молодечно", "section": 1 },
+      "fider": { "id": "******", "number": 234 },
+      "year": 1984,
+      "length": 1.03,
+      "subStations": [],
+      "events": []
+    }
+  ],
+
+  "station": [
+    {
+      
+    }
+  ],
+
+  "fiders": [
+    {
+      "ownerId": "****"
+    }
+  ],
+
+  "subStations": [
+
+  ],
+
+  "events": [
+    {
+      "id": "*****", "object": "cable", "date": "2016-10-11", "type": "tested", "user": "MNF" 
+    }
+  ]
+}
