@@ -14,8 +14,6 @@
               {
                 "id": "*********",
                 "number": 234,
-                "section": 1,
-                "description": "sda flsd fdfj",
                 "cables": [
                   [ "id", "title", "owner", "year", "length" ]
                 ]
@@ -32,20 +30,78 @@
         "shortTitle": "МолРЭС",
         "id": "molRes",
         "subStations": [
-          [ "id", "type", "number", "owner" ]
+          [ "id", "number", "title", "voltage" ]
         ]
       }
     },
     {
       "type": "subStations",
       "team": {
+        "id": "molRes",
         "title": "Молодечненский РЭС",
         "shortTitle": "МолРЭС",
-        "id": "molRes",
         "stations": [
-          [ "id", "number", "voltage", "title" ]
+          [ "id", "type", "number", "title" ]
         ]
       }
+    },
+    {
+      "type": "teams",
+      "branch": {
+        "id": "molEs",
+        "title": "Молодечненские ЭС",
+        "shortTitle": "МолЭС",
+        "teams": [
+          {
+            "id": "molRes",
+            "number": 17,
+            "title": "Молодечненский РЭС",
+            "shortTitle": "МолРЭС"
+          },
+          {
+            "id": "gorRes",
+            "number": 18,
+            "title": "Городской РЭС",
+            "shortTitle": "ГорРЭС"
+          },
+          {
+            "id": "miadRes",
+            "number": 19,
+            "title": "Мядельский РЭС",
+            "shortTitle": "МядРЭС"
+          },
+          {
+            "id": "volRes",
+            "number": 20,
+            "title": "Воложинский РЭС",
+            "shortTitle": "ВолРЭС"
+          },
+          {
+            "id": "vilRes",
+            "number": 21,
+            "title": "Вилейский РЭС",
+            "shortTitle": "ВилРЭС"
+          },
+          {
+            "id": "izp-team",
+            "number": 14,
+            "title": "Служба Изоляции и Защиты от Перенапряжений",
+            "shortTitle": "СИЗП"
+          }
+        ]
+      }
+    }
+  ],
+
+  "stations": [
+    {
+      
+    }
+  ],
+
+  "fiders": [
+    {
+      "ownerId": "****"
     }
   ],
 
@@ -62,18 +118,6 @@
     }
   ],
 
-  "station": [
-    {
-      
-    }
-  ],
-
-  "fiders": [
-    {
-      "ownerId": "****"
-    }
-  ],
-
   "subStations": [
 
   ],
@@ -81,6 +125,21 @@
   "events": [
     {
       "id": "*****", "object": "cable", "date": "2016-10-11", "type": "tested", "user": "MNF" 
+    }
+  ],
+
+  "users": [
+    {
+      "id": "MVG", "teamId": "izp-team", "email": "mich@izp.by", "pasword": "123#M"
+    },
+    {
+      "id": "DJG", "teamId": "izp-team", "email": "djug@izp.by", "pasword": "123#D"
+    },
+    {
+      "id": "LEO", "teamId": "izp-team", "email": "leo@izp.by", "pasword": "123#L"
+    },
+    {
+      "id": "LSV", "teamId": "izp-team", "email": "lsv@izp.by", "pasword": "123#L"
     }
   ]
 }
