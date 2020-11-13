@@ -1,4 +1,4 @@
-Initimport axios from 'axios'
+import axios from 'axios'
     
 const apiClient = axios.create({  // The single Axios instance we use for calls
   baseURL: `http://localhost:3000`,
@@ -10,16 +10,43 @@ const apiClient = axios.create({  // The single Axios instance we use for calls
 })
 
 export default {
-  getCableListByUnitId(unitId) {
+  getCableListByTeamId(teamId) {
+    const response = apiClient.get('/lists?type=cables&teamId=' + teamId)
+    const data = JSON.parse(response);
+    return data.map(({
+      cables: [
+        teamId, stId, stTitle, fidId, fidNum, cabId, cabTitle, cabYear, cabLength, owner
+      ]
+    }) => {
+      return {
+        team: {
+          id: teamId
+        },
+        station: {
+          id: stId,
+          title: stTitle
+        },
+        fider: {
+          id: fidId,
+          numer: fidNum
+        },
+        id: cabId,
+        title: cabTitle,
+        year: cabYear,
+        length: cabLength,
+        owner: owner
+      }
+    })
+  },
+
+  getStationListByTeamId() {
 
   },
-  getStationListByUnitId(unitId) {
+  getSubStationListByTeamId() {
 
   },
-  getSubStationListByUnitId(unitId) {
-
-  },
-  getUnitListByBranchId(branchId) {
+  getUnitListByBranchId() {
     
   }
 }
+
