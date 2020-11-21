@@ -1,1 +1,41 @@
 remote_theme: ngzhio/jekyll-theme-hamilton
+
+title: Javascript Developer
+description: A minimal and beautiful Jekyll theme best for writing and note-taking.
+author: Prafesar
+avatar: /logo.png
+email: prafesar@tut.by
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 10
+
+# Uncomment the below line and set the tracking ID for enabling Google Analytics
+# 
+# google_analytics: 
+
+# Uncomment the below lines and set the Disqus shortname for enabling Disqus
+# 
+# disqus:
+
+# Jekyll
+# ======
+exclude:
+  - scripts/
+  - README.md
+  - jekyll-theme-hamilton.gemspec
+
+# Jekyll SEO Tag (Optional)
+# =========================
+logo: logo.png
+social:
+  name: prafesar
+  links:
+    - https://www.facebook.com/prafesar
+    - https://github.com/prafesar
+# google_site_verification: u4WXQl0Eu66rsQo2kRdCNx
+lang: en
